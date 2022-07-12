@@ -1,0 +1,27 @@
+{
+	"name": "rophnan-video",
+	"version": "1.0.0",
+	"description": "Album art animation for Rophnan's album SIDIST",
+	"scripts": {
+		"start": "remotion preview src/index.tsx",
+		"build": "remotion render src/index.tsx FromRight out/FromRight.mp4",
+		"upgrade": "remotion upgrade",
+		"test": "eslint src --ext ts,tsx,js,jsx && tsc"
+	},
+	"repository": "",
+	"license": "MIT",
+	"dependencies": {
+		"@remotion/cli": "^3.0.31",
+		"@remotion/eslint-config": "^3.0.31",
+		"eslint": "^8.19.0",
+		"prettier": "^2.7.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"remotion": "^3.0.31",
+		"typescript": "^4.7.4"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.15",
+		"@types/web": "^0.0.61"
+	}
+}
