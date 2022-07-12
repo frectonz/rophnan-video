@@ -10,6 +10,7 @@ Album art animation for Rophnan's album SIDIST
 
 https://user-images.githubusercontent.com/53809656/178610915-e95996df-3dd7-4064-9c8b-8fb862b8b1f8.mp4
 
+https://raw.githubusercontent.com/frectonz/rophnan-video/main/out/FromTop.mp4
 
 
 ## Development
