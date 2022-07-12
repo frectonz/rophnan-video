@@ -4,11 +4,11 @@
 	"description": "Album art animation for Rophnan's album SIDIST",
 	"scripts": {
 		"start": "remotion preview src/index.tsx",
-		"video": "remotion render src/index.tsx FromRight out/FromRight.mp4",
+		"build": "remotion render src/index.tsx FromBottom out/FromBottom.mp4",
 		"upgrade": "remotion upgrade",
 		"test": "eslint src --ext ts,tsx,js,jsx && tsc"
 	},
-	"repository": "",
+	"repository": "https://github.com/frectonz/rophnan-video",
 	"license": "MIT",
 	"dependencies": {
 		"@remotion/cli": "^3.0.31",
