@@ -2,7 +2,7 @@ import {continueRender} from 'remotion';
 import {Audio, delayRender} from 'remotion';
 import {useCallback, useEffect, useRef, useState} from 'react';
 import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import randomValues from './randomValues';
+
 import darknoiseBg from '../assets/darknoise.png';
 
 type ImageBlock = {
@@ -18,7 +18,7 @@ type ImageBlock = {
 const Main: React.FC<{
 	imageSrc: string;
 	audioSrc: string;
-	preset: 'fromLeft' | 'fromRight' | 'fromTop' | 'fromBottom' | 'random';
+	preset: 'fromLeft' | 'fromRight' | 'fromTop' | 'fromBottom';
 }> = ({imageSrc, audioSrc, preset}) => {
 	const {width, height} = useVideoConfig();
 	const [blocks, setBlocks] = useState<ImageBlock[]>([]);
@@ -53,8 +53,8 @@ const Main: React.FC<{
 				const imageBlock = {
 					toX: x,
 					toY: y,
-					fromX: randomValues[i].x,
-					fromY: randomValues[i].y,
+					fromX: 0,
+					fromY: 0,
 					width: BLOCK_WIDTH,
 					height: BLOCK_HEIGHT,
 					data: ctx.getImageData(x, y, BLOCK_WIDTH, BLOCK_HEIGHT),
@@ -72,9 +72,6 @@ const Main: React.FC<{
 				} else if (preset === 'fromBottom') {
 					imageBlock.fromY = height;
 					imageBlock.fromX = x;
-				} else if (preset === 'random') {
-					imageBlock.fromX = randomValues[i].x;
-					imageBlock.fromY = randomValues[i].y;
 				}
 
 				imageBlocks.push(imageBlock);
@@ -148,14 +145,17 @@ const ImageCanvas: React.FC<{
 	});
 
 	const rotate = spring({
-		from: 2,
+		from: 3,
 		to: 0,
 		frame,
 		fps,
 		durationInFrames: 300,
 	});
 
-	const borderRadius = block.toX - x < 1 || block.toY - y < 1 ? '5px' : '50%';
+	const borderRadiusX = block.toX - x;
+	const borderRadiusY = block.toY - y;
+
+	const borderRadius = `${borderRadiusX + borderRadiusY * 10}%`;
 
 	return (
 		<>
