@@ -7,6 +7,7 @@ Album art animation for Rophnan's album SIDIST
 ## Preview
 
 Check the `out` directory for samples or click [here](https://github.com/frectonz/rophnan-video/tree/main/out).
+Watch the videos on YouTube [here](https://youtube.com/playlist?list=PLRHc6vdndfMl5MFR0PjrhIcKJTlNB7I6Z)
 
 ## Development
 
